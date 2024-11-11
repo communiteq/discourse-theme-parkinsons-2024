@@ -4,23 +4,30 @@
   "license_url": null,
   "about_url": null,
   "authors": "Communiteq",
-  "theme_version": "2024.11.09",
+  "theme_version": "2024.11.11",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
     "ParkinsansBold": "assets/Parkinsans-Bold.woff2",
     "ParkinsansRegular": "assets/Parkinsans-Regular.woff2",
     "ParkinsansExtraBold": "assets/Parkinsans-ExtraBold.woff2",
-    "PoppinsBold": "assets/poppins-bold-webfont.woff2",
-    "PoppinsRegular": "assets/poppins-regular-webfont.woff2",
-    "PoppinsMedium": "assets/poppins-medium-webfont.woff2",
     "ParkinsansLight": "assets/Parkinsans-Light.woff2",
     "ParkinsansMedium": "assets/Parkinsans-Medium.woff2",
     "ParkinsansSemiBold": "assets/Parkinsans-SemiBold.woff2",
-    "PoppinsLight": "assets/poppins-light-webfont.woff2",
-    "PoppinsSemibold": "assets/poppins-semibold-webfont.woff2"
   },
   "color_schemes": {
+    "ParkinsonsUK24": {
+      "primary": "000046",
+      "secondary": "ffffff",
+      "tertiary": "0050c7",
+      "quaternary": "0093c9",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "fff700",
+      "danger": "f9671f",
+      "success": "7ce2c6",
+      "love": "ffc2f5"
+    }
   },
   "modifiers": {
   },

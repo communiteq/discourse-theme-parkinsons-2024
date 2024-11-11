@@ -18,34 +18,150 @@
 	font-style: normal;
 }
 
-@font-face {
-	font-family: 'Poppins';
-	src: url($PoppinsRegular);
-	font-weight: 400;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Poppins';
-	src: url($PoppinsMedium);
-	font-weight: 500;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Poppins';
-	src: url($PoppinsBold);
-	font-weight: 700;
-	font-style: normal;
-}
-
-body {
-    font-family: Poppins;
-    font-weight: 400;
-    font-size: 20px;
-}
-
 h1, h2, h3, h4, h5, h6, .title {
     font-family: Parkisans;
     font-weight: 800;
+    color: var(--primary);
+}
+
+// all small buttons in the admin interface should have a white icon
+// and slight rounded corners
+// also, a point fix for bookmark modal
+.admin-interface .btn,
+.bookmark-reminder-modal button.delete-bookmark {
+    border-radius: 4px;
+    color: var(--secondary);
+    .d-icon {
+        color: var(--secondary);
+    }
+}
+
+.discourse-touch, .discourse-no-touch {
+    .btn-default,
+    .btn-default:visited,
+    .d-header-mode .bootstrap-mode,
+    .select-kit .select-kit-header.btn-default,
+    .xadmin-interface .community-health button.custom-date-range-button,
+    .admin-interface .backup-options label.btn,
+    .admin-interface .admin-plugins-list__settings a.btn,
+    .admin-interface .admin-watched-words .btn,
+    .admin-interface .admin-permalinks .permalink-form .btn,
+    .admin-interface .admin-email .email-advanced-test .btn, // email test
+    .admin-interface .badge-groupings-modal .btn-text, // badge groupings
+    .admin-interface .award-badge .btn, // group award
+    .admin-interface .post-edits-count .controls .btn, // user management
+    .admin-interface .backup-controls .btn-danger,
+    .btn-icon-text.btn-danger,
+    .btn-text.btn-danger,
+    .btn-primary {
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 24px;
+        background-color: var(--primary);
+        color: var(--secondary);
+        .d-icon {
+            color: var(--secondary);
+            height: 25px;
+        }
+        &:hover {
+            background-color: var(--parkinsons-navy-80p);
+            color: var(--parkinsons-white-80p);
+            .d-icon {
+                color: var(--parkinsons-white-80p);
+            }
+        }
+    }
+    // (re)set danger button color
+    .admin-interface .backup-controls .btn-danger,
+    .btn-icon-text.btn-danger,
+    .btn-text.btn-danger {
+        background-color: var(--danger);
+        &:hover {
+            background-color: var(--parkinsons-tomato-80p);
+        }
+    }
+    // reset it back for admin popup menu (delete topic) and bookmark delete
+    .popup-menu-btn-danger, .bookmark-menu-content .bookmark-menu__row-btn.btn-danger {
+        color: var(--danger);
+        .d-icon {
+            color: var(--danger);
+        }
+        &:hover {
+            color: var(--parkinsons-tomato-80p);
+            .d-icon {
+                color: var(--parkinsons-tomato-80p);
+            }
+        }
+    }
+    .btn-primary {
+        background-color: var(--parkinsons-denim);
+        &:hover {
+            background-color: var(--parkinsons-denim-80p);
+        }
+    }
+
+    // buttons with only an icon need a smaller padding
+    .btn.no-text,
+    .topic-admin-menu-button .btn,
+    .timeline-footer-controls .btn,
+    .admin-interface .community-health button.custom-date-range-button,
+    .timeline-footer-controls .select-kit .select-kit-header.btn-default {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    // reset it back for header-icons, they don't need dark bg
+    .d-header-icons .icon:hover,
+    .d-header-icons .icon:focus,
+    .d-header-icons .icon {
+        background-color: var(--secondary);
+        padding-left: 0.2143em;
+        padding-right: 0.2143em;
+        .d-icon {
+            color: #a0a0a0;
+
+        }
+    }
+    .drop-down-mode .d-header-icons .active .icon {
+        .d-icon {
+            color: #a0a0a0;
+        }
+        border: 1px solid var(--secondary);
+    }
+
+    // post control buttons get .d-hover class
+    nav.post-controls .actions button.d-hover,
+    nav.post-controls .actions button:focus,
+    nav.post-controls .actions button:active {
+        outline: none;
+        color: var(--parkinsons-denim);
+        background-color: var(--parkinsons-white-80p);
+    }
+    nav.post-controls .actions button.create {
+        color: var(--primary-high-or-secondary-low);
+    }
+}
+
+// some point fixes
+#topic-footer-buttons .bookmark.bookmarked .d-icon-bookmark, #topic-footer-buttons .bookmark.bookmarked .d-icon-discourse-bookmark-clock {
+    color: var(--parkinsons-light-blue);
+}
+
+// remove weird gradient on /admin/users/list/active
+.admin-controls {
+    &, .controls, nav {
+        background: var(--parkinsons-mint);
+
+    }
+    nav::after, nav::before {
+        background: none;
+    }
+    .admin-actions > :not(:last-child) {
+        margin-right: .5em;
+    }
+}
+
+// remove powered-by-discourse
+.powered-by-discourse {
+    display: none;
 }

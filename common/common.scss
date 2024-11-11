@@ -24,8 +24,8 @@ h1, h2, h3, h4, h5, h6, .title {
     color: var(--primary);
 }
 
-// all small buttons in the admin interface should have a white icon
-// and slight rounded corners
+// (almost) all small buttons in the admin interface should have
+// a white icon and slight rounded corners
 // also, a point fix for bookmark modal
 .admin-interface .btn,
 .bookmark-reminder-modal button.delete-bookmark {
@@ -36,12 +36,22 @@ h1, h2, h3, h4, h5, h6, .title {
     }
 }
 
+// almost all... so we need to revert a few back to black text
+.d-editor-button-bar .btn,
+.admin-interface .admin-users-list .admin-actions .btn,
+.admin-interface .admin-customize-themes .themes-list .btn {
+    color: var(--primary);
+    .d-icon {
+        color: var(--primary);
+    }
+}
+
+// make all other buttons look like buttons: rounded corners, big padding
 .discourse-touch, .discourse-no-touch {
     .btn-default,
     .btn-default:visited,
     .d-header-mode .bootstrap-mode,
     .select-kit .select-kit-header.btn-default,
-    .xadmin-interface .community-health button.custom-date-range-button,
     .admin-interface .backup-options label.btn,
     .admin-interface .admin-plugins-list__settings a.btn,
     .admin-interface .admin-watched-words .btn,
@@ -81,7 +91,9 @@ h1, h2, h3, h4, h5, h6, .title {
         }
     }
     // reset it back for admin popup menu (delete topic) and bookmark delete
-    .popup-menu-btn-danger, .bookmark-menu-content .bookmark-menu__row-btn.btn-danger {
+    .popup-menu-btn-danger.btn-danger,
+    .bookmark-menu-content .bookmark-menu__row-btn.btn-danger {
+        padding-left: 1rem;
         color: var(--danger);
         .d-icon {
             color: var(--danger);
@@ -93,6 +105,7 @@ h1, h2, h3, h4, h5, h6, .title {
             }
         }
     }
+    // primary needs a diffeent color
     .btn-primary {
         background-color: var(--parkinsons-denim);
         &:hover {
@@ -122,6 +135,7 @@ h1, h2, h3, h4, h5, h6, .title {
 
         }
     }
+    // the search and hamburger at the top have an .active class
     .drop-down-mode .d-header-icons .active .icon {
         .d-icon {
             color: #a0a0a0;

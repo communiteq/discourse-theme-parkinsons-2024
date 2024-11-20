@@ -11,12 +11,17 @@ $parkinsons-lavender: #9280ff;
 $parkinsons-mint: #7ce2c6;
 $parkinsons-moss: #09555c;
 
+$parkinsons-putty: #f2ece4;
+$parkinsons-stone: #d8e9f0;
+
 // https://mdigi.tools/lighten-color/#000046
 $parkinsons-navy-80p: #00009e;
 $parkinsons-denim-80p: #066aff;
 // https://mdigi.tools/darken-color
 $parkinsons-white-80p: #f0f0f0;
 $parkinsons-tomato-80p: #da4c06;
+$parkinsons-tomato-light: #fee1d2;
+$parkinsons-moss-light: #3a777c;
 
 :root {
     --parkinsons-sky: #{$parkinsons-sky};
@@ -32,17 +37,25 @@ $parkinsons-tomato-80p: #da4c06;
     --parkinsons-mint: #{$parkinsons-mint};
     --parkinsons-moss: #{$parkinsons-moss};
 
+    --parkinsons-putty: #{$parkinsons-putty};
+    --parkinsons-stone: #{$parkinsons-stone};
+
     --primary-low: #{$parkinsons-denim};
+    --primary-low-mid: #{$parkinsons-denim};
     --primary-medium: #{$primary};
     --primary-high: #{$primary};
     --primary-high-or-secondary-low: #{$primary};
     --primary-med-or-secondary-med: #{$primary};
 
-    --primary-low-mid-or-secondary-high: #{$parkinsons-denim};
-    --primary-med-or-secondary-high: #{$parkinsons-denim};
+    --primary-low-mid-or-secondary-high: #{$parkinsons-navy};
+    --primary-med-or-secondary-high: #{$parkinsons-navy};
+
+    --success: #{$parkinsons-moss-light};
 
     --parkinsons-navy-80p: #{$parkinsons-navy-80p};
     --parkinsons-denim-80p: #{$parkinsons-denim-80p};
     --parkinsons-white-80p: #{$parkinsons-white-80p};
     --parkinsons-tomato-80p: #{$parkinsons-tomato-80p};
+    --parkinsons-tomato-light: #{$parkinsons-tomato-light};
+    --parkinsons-moss-light: #{$parkinsons-moss-light};
 }

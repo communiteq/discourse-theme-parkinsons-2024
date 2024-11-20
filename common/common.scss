@@ -1,3 +1,11 @@
+// https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight
+
+@font-face {
+	font-family: 'Parkisans';
+	src: url($ParkinsansLight);
+	font-weight: 300;
+	font-style: normal;
+}
 @font-face {
 	font-family: 'Parkisans';
 	src: url($ParkinsansRegular);
@@ -6,11 +14,22 @@
 }
 @font-face {
 	font-family: 'Parkisans';
+	src: url($ParkinsansMedium);
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Parkisans';
+	src: url($ParkinsansSemiBold);
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Parkisans';
 	src: url($ParkinsansBold);
 	font-weight: 700;
 	font-style: normal;
 }
-
 @font-face {
 	font-family: 'Parkisans';
 	src: url($ParkinsansExtraBold);
@@ -20,7 +39,7 @@
 
 h1, h2, h3, h4, h5, h6, .title {
     font-family: Parkisans;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--primary);
 }
 
@@ -50,6 +69,8 @@ h1, h2, h3, h4, h5, h6, .title {
 .discourse-touch, .discourse-no-touch {
     .btn-default,
     .btn-default:visited,
+    #login-buttons .btn,
+    .signup-cta .buttons .btn,
     .d-header-mode .bootstrap-mode,
     .select-kit .select-kit-header.btn-default,
     .admin-interface .backup-options label.btn,
@@ -107,9 +128,9 @@ h1, h2, h3, h4, h5, h6, .title {
     }
     // primary needs a diffeent color
     .btn-primary {
-        background-color: var(--parkinsons-denim);
+        background-color: var(--parkinsons-denim) !important;
         &:hover {
-            background-color: var(--parkinsons-denim-80p);
+            background-color: var(--parkinsons-denim-80p) !important;
         }
     }
 
@@ -188,9 +209,9 @@ h1, h2, h3, h4, h5, h6, .title {
 
 .parkinsons-hero {
     border-radius: 20px;
-    background-color: var(--parkinsons-sky);
+    background-color: var(--parkinsons-stone);
     padding: 0px;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 50px 0px;
 
     display: flex;
     flex-wrap: wrap;
@@ -208,6 +229,7 @@ h1, h2, h3, h4, h5, h6, .title {
     .copy {
         padding: 20px 30px;
         flex: 1;
+        line-height: 1.5em;
     }
 
     .btn {
@@ -250,5 +272,62 @@ h1, h2, h3, h4, h5, h6, .title {
 @media (max-width: 750px) {
     .d-header .header-link {
         display: none;
+    }
+}
+.d-modal.login-modal .login-right-side, .d-modal.create-account .login-right-side {
+    background-color: var(--parkinsons-sky);
+}
+
+.alert.alert-info {
+    background-color: var(--parkinsons-stone);
+    line-height: 1.5em;
+}
+
+// table headings
+.discourse-no-touch .sortable:hover, .discourse-no-touch .sortable:focus {
+    background-color: var(--parkinsons-white-80p);
+}
+
+nav.post-controls .actions .double-button:hover button,
+nav.post-controls .actions .double-button button.like.d-hover,
+nav.post-controls .actions .double-button button.like.d-hover .d-icon,
+nav.post-controls .actions .double-button button.button-count + .toggle-like.d-hover {
+    background-color: var(--parkinsons-white-80p);
+    color: var(--primary-medium);
+}
+
+// padding of for instance the period drop down on /u
+.select-kit.dropdown-select-box.period-chooser .period-chooser-row {
+    padding: 0.5em;
+}
+
+// badges all the same icon color but different backgrounds
+.user-badge.badge-type-gold .fa,
+.user-badge.badge-type-silver .fa,
+.user-badge.badge-type-bronze .fa,
+.user-card .badge-section .more-user-badges a.badge-type-gold .fa,
+.user-card .badge-section .more-user-badges a.badge-type-silver .fa,
+.user-card .badge-section .more-user-badges a.badge-type-bronze .fa,
+.badge-card .badge-contents .badge-icon.badge-type-gold .fa,
+.badge-card .badge-contents .badge-icon.badge-type-silver .fa,
+.badge-card .badge-contents .badge-icon.badge-type-bronze .fa {
+    color: var(--parkinsons-navy) !important;
+}
+.badge-card:has(.badge-type-bronze), .user-card .badge-section .user-badge.badge-type-bronze {
+    background-color: var(--parkinsons-tomato-light);
+    .favorite-btn {
+        background-color: var(--parkinsons-tomato-light);
+    }
+}
+.badge-card:has(.badge-type-silver), .user-card .badge-section .user-badge.badge-type-silver {
+    background-color: var(--parkinsons-stone);
+    .favorite-btn {
+        background-color: var(--parkinsons-stone);
+    }
+}
+.badge-card:has(.badge-type-gold), .user-card .badge-section .user-badge.badge-type-gold {
+    background-color: var(--parkinsons-putty);
+    .favorite-btn {
+        background-color: var(--parkinsons-putty);
     }
 }
